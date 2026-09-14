@@ -1,0 +1,4419 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width,
+                   initial-scale=1.0,
+                   maximum-scale=1.0,
+                   user-scalable=no">
+
+    <meta name="theme-color" content="#08030a">
+
+    <title>حاجة صغيرة لى بنوتى  ❤️</title>
+
+    <style>
+
+        /* =========================================================
+           RESET
+        ========================================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        body {
+            font-family:
+                "Tahoma",
+                "Arial",
+                sans-serif;
+
+            background:
+                radial-gradient(
+                    circle at 50% 20%,
+                    #351326 0%,
+                    #120711 40%,
+                    #050206 100%
+                );
+
+            color: #fff;
+
+            overflow: hidden;
+        }
+
+        button,
+        input {
+            font-family: inherit;
+        }
+
+        button {
+            border: none;
+            cursor: pointer;
+        }
+
+
+        /* =========================================================
+           BACKGROUND
+        ========================================================= */
+
+        #background {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .glow {
+            position: absolute;
+            width: 350px;
+            height: 350px;
+
+            border-radius: 50%;
+
+            filter: blur(90px);
+
+            opacity: .35;
+
+            animation: glowMove 8s ease-in-out infinite alternate;
+        }
+
+        .glow.one {
+            background: #ff2675;
+            top: -120px;
+            right: -100px;
+        }
+
+        .glow.two {
+            background: #8e24aa;
+            bottom: -150px;
+            left: -100px;
+
+            animation-delay: 2s;
+        }
+
+        .glow.three {
+            background: #ff5c8d;
+            top: 45%;
+            left: 45%;
+
+            opacity: .12;
+
+            animation-delay: 4s;
+        }
+
+        @keyframes glowMove {
+
+            from {
+                transform: translate(0, 0) scale(1);
+            }
+
+            to {
+                transform: translate(60px, 40px) scale(1.25);
+            }
+        }
+
+
+        /* =========================================================
+           STARS
+        ========================================================= */
+
+        .stars {
+            position: absolute;
+            inset: 0;
+        }
+
+        .star {
+            position: absolute;
+
+            width: 2px;
+            height: 2px;
+
+            background: #fff;
+
+            border-radius: 50%;
+
+            opacity: .5;
+
+            animation:
+                twinkle
+                2s
+                ease-in-out
+                infinite;
+        }
+
+        @keyframes twinkle {
+
+            0%,
+            100% {
+                opacity: .15;
+                transform: scale(.7);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scale(1.5);
+            }
+        }
+
+
+        /* =========================================================
+           FLOATING HEARTS
+        ========================================================= */
+
+        .heart {
+            position: absolute;
+
+            bottom: -50px;
+
+            font-size: 18px;
+
+            opacity: 0;
+
+            animation:
+                floatHeart
+                linear
+                forwards;
+
+            filter: drop-shadow(
+                0 0 8px rgba(255, 60, 120, .7)
+            );
+        }
+
+        @keyframes floatHeart {
+
+            0% {
+                transform:
+                    translateY(0)
+                    translateX(0)
+                    rotate(0deg)
+                scale(.7);
+
+                opacity: 0;
+            }
+
+            10% {
+                opacity: .8;
+            }
+
+            90% {
+                opacity: .6;
+            }
+
+            100% {
+                transform:
+                    translateY(-110vh)
+                    translateX(var(--move))
+                    rotate(360deg)
+                scale(1.4);
+
+                opacity: 0;
+            }
+        }
+
+
+        /* =========================================================
+           APP
+        ========================================================= */
+
+        #app {
+            position: relative;
+
+            z-index: 2;
+
+            width: 100%;
+            height: 100%;
+        }
+
+
+        /* =========================================================
+           SCREENS
+        ========================================================= */
+
+        .screen {
+            position: absolute;
+
+            inset: 0;
+
+            width: 100%;
+            height: 100%;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            padding:
+                25px
+                20px;
+
+            opacity: 0;
+
+            visibility: hidden;
+
+            transform:
+                scale(.96)
+                translateY(20px);
+
+            transition:
+                opacity .6s ease,
+                transform .6s ease,
+                visibility .6s ease;
+        }
+
+        .screen.active {
+            opacity: 1;
+
+            visibility: visible;
+
+            transform:
+                scale(1)
+                translateY(0);
+        }
+
+
+        /* =========================================================
+           CARD
+        ========================================================= */
+
+        .card {
+            width: 100%;
+            max-width: 650px;
+
+            max-height: 90vh;
+
+            overflow-y: auto;
+
+            padding:
+                35px
+                25px;
+
+            text-align: center;
+
+            border-radius: 28px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,.09),
+                    rgba(255,255,255,.025)
+                );
+
+            border:
+                1px solid
+                rgba(255,255,255,.12);
+
+            backdrop-filter:
+                blur(20px);
+
+            -webkit-backdrop-filter:
+                blur(20px);
+
+            box-shadow:
+                0 25px 80px
+                rgba(0,0,0,.5),
+
+                inset
+                0 1px 0
+                rgba(255,255,255,.1);
+        }
+
+        .card::-webkit-scrollbar {
+            width: 3px;
+        }
+
+        .card::-webkit-scrollbar-thumb {
+            background: rgba(255,255,255,.2);
+            border-radius: 20px;
+        }
+
+
+        /* =========================================================
+           TYPOGRAPHY
+        ========================================================= */
+
+        .small-label {
+            display: block;
+
+            color: #ff8fb3;
+
+            font-size: 13px;
+
+            letter-spacing: 2px;
+
+            margin-bottom: 15px;
+        }
+
+        .title {
+            font-size:
+                clamp(
+                    28px,
+                    8vw,
+                    52px
+                );
+
+            line-height: 1.35;
+
+            margin-bottom: 20px;
+
+            text-shadow:
+                0 0 30px
+                rgba(255,70,130,.4);
+        }
+
+        .subtitle {
+            color: rgba(255,255,255,.75);
+
+            font-size:
+                clamp(
+                    15px,
+                    4vw,
+                    19px
+                );
+
+            line-height: 2;
+
+            min-height: 40px;
+        }
+
+        .typing {
+            white-space: pre-line;
+        }
+
+        .typing::after {
+            content: "|";
+
+            color: #ff6e9d;
+
+            animation:
+                cursorBlink
+                .8s
+                infinite;
+        }
+
+        @keyframes cursorBlink {
+
+            0%,
+            50% {
+                opacity: 1;
+            }
+
+            51%,
+            100% {
+                opacity: 0;
+            }
+        }
+
+
+        /* =========================================================
+           BUTTON
+        ========================================================= */
+
+        .main-btn {
+            position: relative;
+
+            margin-top: 28px;
+
+            padding:
+                15px
+                28px;
+
+            border-radius: 50px;
+
+            color: white;
+
+            font-size: 16px;
+
+            font-weight: bold;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ff3d7f,
+                    #b61cff
+                );
+
+            box-shadow:
+                0 10px 35px
+                rgba(255,40,120,.3);
+
+            transition:
+                transform .25s ease,
+                box-shadow .25s ease;
+        }
+
+        .main-btn:hover {
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 15px 45px
+                rgba(255,40,120,.45);
+        }
+
+        .main-btn:active {
+            transform: scale(.96);
+        }
+
+        .main-btn:disabled {
+            opacity: .4;
+            cursor: not-allowed;
+        }
+
+
+        /* =========================================================
+           LOGIN
+        ========================================================= */
+
+        .lock-icon {
+            font-size: 65px;
+
+            margin-bottom: 15px;
+
+            animation:
+                heartbeat
+                1.8s
+                infinite;
+        }
+
+        @keyframes heartbeat {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            10% {
+                transform: scale(1.12);
+            }
+
+            20% {
+                transform: scale(1);
+            }
+
+            30% {
+                transform: scale(1.12);
+            }
+
+            40% {
+                transform: scale(1);
+            }
+        }
+
+        .password-box {
+            margin-top: 25px;
+        }
+
+        .password-box input {
+            width: 100%;
+
+            max-width: 320px;
+
+            padding:
+                15px
+                18px;
+
+            border-radius: 15px;
+
+            border:
+                1px solid
+                rgba(255,255,255,.15);
+
+            outline: none;
+
+            color: white;
+
+            text-align: center;
+
+            font-size: 17px;
+
+            background:
+                rgba(0,0,0,.25);
+
+            transition:
+                border-color .3s ease,
+                box-shadow .3s ease;
+        }
+
+        .password-box input:focus {
+            border-color: #ff5b92;
+
+            box-shadow:
+                0 0 20px
+                rgba(255,60,120,.15);
+        }
+
+        .error-message {
+            min-height: 24px;
+
+            margin-top: 12px;
+
+            color: #ff7fa7;
+
+            font-size: 13px;
+        }
+
+
+        /* =========================================================
+           COUNTDOWN
+        ========================================================= */
+
+        .countdown {
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 8px;
+
+            margin-top: 30px;
+        }
+
+        .time-box {
+            padding:
+                15px
+                8px;
+
+            border-radius: 18px;
+
+            background:
+                rgba(255,255,255,.06);
+
+            border:
+                1px solid
+                rgba(255,255,255,.08);
+        }
+
+        .time-number {
+            display: block;
+
+            font-size: 27px;
+
+            font-weight: bold;
+
+            color: #ff8fb3;
+        }
+
+        .time-label {
+            font-size: 11px;
+
+            color:
+                rgba(255,255,255,.5);
+
+            margin-top: 5px;
+        }
+
+
+        /* =========================================================
+           START HEART
+        ========================================================= */
+
+        .big-heart {
+            font-size: 90px;
+
+            display: inline-block;
+
+            filter:
+                drop-shadow(
+                    0 0 30px
+                    rgba(255,40,100,.7)
+                );
+
+            animation:
+                heartFloat
+                3s
+                ease-in-out
+                infinite;
+        }
+
+        @keyframes heartFloat {
+
+            0%,
+            100% {
+                transform:
+                    translateY(0)
+                    scale(1);
+            }
+
+            50% {
+                transform:
+                    translateY(-12px)
+                    scale(1.08);
+            }
+        }
+
+
+        /* =========================================================
+           STORY
+        ========================================================= */
+
+        .quote {
+            margin-top: 25px;
+
+            padding: 20px;
+
+            border-right:
+                3px solid
+                #ff4d89;
+
+            text-align: right;
+
+            color:
+                rgba(255,255,255,.75);
+
+            line-height: 2;
+        }
+
+
+        /* =========================================================
+           INTERACTIVE QUESTION
+        ========================================================= */
+
+        .question-options {
+            display: grid;
+
+            gap: 12px;
+
+            margin-top: 25px;
+        }
+
+        .option-btn {
+            padding:
+                15px
+                18px;
+
+            border-radius: 16px;
+
+            background:
+                rgba(255,255,255,.06);
+
+            border:
+                1px solid
+                rgba(255,255,255,.1);
+
+            color: white;
+
+            font-size: 15px;
+
+            transition:
+                .25s ease;
+        }
+
+        .option-btn:hover {
+            background:
+                rgba(255,70,130,.15);
+
+            border-color:
+                rgba(255,90,140,.5);
+
+            transform:
+                translateX(-4px);
+        }
+
+        .answer-result {
+            min-height: 50px;
+
+            margin-top: 20px;
+
+            color: #ff9fbd;
+
+            line-height: 1.8;
+        }
+
+
+        /* =========================================================
+           LOVE METER
+        ========================================================= */
+
+        .meter {
+            position: relative;
+
+            width: 100%;
+            height: 20px;
+
+            margin:
+                30px
+                0
+                15px;
+
+            border-radius: 50px;
+
+            overflow: hidden;
+
+            background:
+                rgba(255,255,255,.08);
+        }
+
+        .meter-fill {
+            width: 0%;
+
+            height: 100%;
+
+            border-radius: 50px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #ff2f70,
+                    #ff8ab0,
+                    #c53cff
+                );
+
+            transition:
+                width 2s
+                cubic-bezier(.2,.8,.2,1);
+        }
+
+        .infinity {
+            font-size: 70px;
+
+            color: #ff6e9d;
+
+            opacity: .2;
+
+            transition:
+                opacity 1s ease,
+                transform 1s ease;
+        }
+
+        .infinity.show {
+            opacity: 1;
+
+            transform:
+                scale(1.15);
+
+            filter:
+                drop-shadow(
+                    0 0 25px
+                    rgba(255,50,120,.6)
+                );
+        }
+
+
+        /* =========================================================
+           MEMORIES
+        ========================================================= */
+
+        .memory-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 12px;
+
+            margin-top: 25px;
+        }
+
+        .memory {
+            min-height: 130px;
+
+            padding: 18px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            flex-direction: column;
+
+            gap: 10px;
+
+            border-radius: 20px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,80,130,.13),
+                    rgba(255,255,255,.04)
+                );
+
+            border:
+                1px solid
+                rgba(255,255,255,.08);
+        }
+
+        .memory-icon {
+            font-size: 35px;
+        }
+
+        .memory p {
+            color:
+                rgba(255,255,255,.7);
+
+            font-size: 13px;
+
+            line-height: 1.7;
+        }
+
+
+        /* =========================================================
+           HOLD HEART
+        ========================================================= */
+
+        .hold-area {
+            margin-top: 25px;
+        }
+
+        .hold-heart {
+            width: 120px;
+            height: 120px;
+
+            margin:
+                10px
+                auto
+                20px;
+
+            border-radius: 50%;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            font-size: 55px;
+
+            background:
+                rgba(255,50,110,.1);
+
+            border:
+                1px solid
+                rgba(255,80,130,.3);
+
+            user-select: none;
+
+            touch-action: none;
+
+            transition:
+                transform .15s ease,
+                background .3s ease;
+        }
+
+        .hold-heart.holding {
+            transform: scale(1.15);
+
+            background:
+                rgba(255,50,110,.25);
+
+            box-shadow:
+                0 0 50px
+                rgba(255,50,120,.4);
+        }
+
+        .hold-progress {
+            width: 100%;
+            height: 7px;
+
+            background:
+                rgba(255,255,255,.08);
+
+            border-radius: 50px;
+
+            overflow: hidden;
+        }
+
+        .hold-progress-fill {
+            width: 0%;
+            height: 100%;
+
+            background:
+                #ff4c87;
+
+            transition:
+                width .1s linear;
+        }
+
+
+        /* =========================================================
+           BIRTHDAY
+        ========================================================= */
+
+        #birthdayScreen {
+            overflow: hidden;
+        }
+
+        .birthday-content {
+            position: relative;
+
+            z-index: 3;
+
+            text-align: center;
+        }
+
+        .cake {
+            font-size: 95px;
+
+            animation:
+                cakeBounce
+                1.8s
+                ease-in-out
+                infinite;
+
+            filter:
+                drop-shadow(
+                    0 0 25px
+                    rgba(255,150,100,.35)
+                );
+        }
+
+        @keyframes cakeBounce {
+
+            0%,
+            100% {
+                transform:
+                    translateY(0)
+                    rotate(-2deg);
+            }
+
+            50% {
+                transform:
+                    translateY(-15px)
+                    rotate(2deg);
+            }
+        }
+
+        .birthday-title {
+            font-size:
+                clamp(
+                    35px,
+                    10vw,
+                    70px
+                );
+
+            margin:
+                15px
+                0;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #ff7fa9,
+                    #fff,
+                    #ff65a0
+                );
+
+            -webkit-background-clip: text;
+            background-clip: text;
+
+            color: transparent;
+
+            background-size: 200%;
+
+            animation:
+                gradientText
+                3s
+                linear
+                infinite;
+        }
+
+        @keyframes gradientText {
+
+            0% {
+                background-position: 0%;
+            }
+
+            100% {
+                background-position: 200%;
+            }
+        }
+
+        #confettiContainer {
+            position: fixed;
+
+            inset: 0;
+
+            z-index: 2;
+
+            pointer-events: none;
+
+            overflow: hidden;
+        }
+
+        .confetti {
+            position: absolute;
+
+            top: -20px;
+
+            width: 8px;
+            height: 15px;
+
+            animation:
+                confettiFall
+                3s
+                linear
+                forwards;
+        }
+
+        @keyframes confettiFall {
+
+            to {
+                transform:
+                    translateY(110vh)
+                    rotate(720deg);
+            }
+        }
+
+
+        /* =========================================================
+           FINAL LETTER
+        ========================================================= */
+
+        .letter {
+            position: relative;
+
+            margin-top: 25px;
+
+            padding:
+                25px
+                20px;
+
+            text-align: right;
+
+            line-height: 2.2;
+
+            font-size: 16px;
+
+            color:
+                rgba(255,255,255,.88);
+
+            background:
+                rgba(255,255,255,.035);
+
+            border-radius: 20px;
+
+            border:
+                1px solid
+                rgba(255,255,255,.07);
+        }
+
+        .signature {
+            margin-top: 25px;
+
+            text-align: center;
+
+            color: #ff8fb3;
+
+            font-size: 18px;
+        }
+
+
+        /* =========================================================
+           FINAL
+        ========================================================= */
+
+        .final-heart {
+            font-size: 110px;
+
+            animation:
+                finalHeart
+                1.5s
+                infinite;
+        }
+
+        @keyframes finalHeart {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.15);
+            }
+        }
+
+        .final-message {
+            font-size: 17px;
+
+            line-height: 2.2;
+
+            color:
+                rgba(255,255,255,.8);
+
+            margin-top: 20px;
+        }
+
+
+        /* =========================================================
+           MUSIC BUTTON
+        ========================================================= */
+
+        #musicButton {
+            position: fixed;
+
+            z-index: 100;
+
+            left: 18px;
+            bottom: 18px;
+
+            width: 48px;
+            height: 48px;
+
+            border-radius: 50%;
+
+            color: white;
+
+            background:
+                rgba(255,255,255,.1);
+
+            border:
+                1px solid
+                rgba(255,255,255,.15);
+
+            backdrop-filter:
+                blur(10px);
+
+            box-shadow:
+                0 5px 25px
+                rgba(0,0,0,.3);
+
+            transition:
+                .25s ease;
+        }
+
+        #musicButton:hover {
+            transform: scale(1.08);
+        }
+
+
+        /* =========================================================
+           MUSIC NOTICE
+        ========================================================= */
+
+        #musicNotice {
+            position: fixed;
+
+            z-index: 200;
+
+            left: 50%;
+
+            bottom: 80px;
+
+            transform:
+                translateX(-50%);
+
+            width:
+                calc(100% - 40px);
+
+            max-width: 350px;
+
+            padding:
+                12px
+                15px;
+
+            text-align: center;
+
+            border-radius: 15px;
+
+            background:
+                rgba(20,5,15,.9);
+
+            border:
+                1px solid
+                rgba(255,255,255,.1);
+
+            backdrop-filter:
+                blur(15px);
+
+            font-size: 13px;
+
+            opacity: 0;
+
+            pointer-events: none;
+
+            transition:
+                opacity .4s ease;
+        }
+
+        #musicNotice.show {
+            opacity: 1;
+
+            pointer-events: auto;
+        }
+
+
+        /* =========================================================
+           PROGRESS
+        ========================================================= */
+
+        #progress {
+            position: fixed;
+
+            z-index: 50;
+
+            top: 20px;
+
+            left: 50%;
+
+            transform:
+                translateX(-50%);
+
+            display: flex;
+
+            gap: 6px;
+        }
+
+        .progress-dot {
+            width: 6px;
+            height: 6px;
+
+            border-radius: 50%;
+
+            background:
+                rgba(255,255,255,.2);
+
+            transition:
+                .3s ease;
+        }
+
+        .progress-dot.active {
+            width: 22px;
+
+            background:
+                #ff5f91;
+        }
+
+
+        /* =========================================================
+           BACK BUTTON
+        ========================================================= */
+
+        #backButton {
+            position: fixed;
+
+            z-index: 100;
+
+            right: 18px;
+            bottom: 18px;
+
+            width: 42px;
+            height: 42px;
+
+            border-radius: 50%;
+
+            color: white;
+
+            background:
+                rgba(255,255,255,.08);
+
+            border:
+                1px solid
+                rgba(255,255,255,.1);
+
+            display: none;
+        }
+
+
+        /* =========================================================
+           RESPONSIVE
+        ========================================================= */
+
+        @media (max-width: 500px) {
+
+            .screen {
+                padding:
+                    18px
+                    13px;
+            }
+
+            .card {
+                padding:
+                    28px
+                    18px;
+
+                max-height: 92vh;
+
+                border-radius: 23px;
+            }
+
+            .memory-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .memory {
+                min-height: 100px;
+            }
+
+            .countdown {
+                gap: 5px;
+            }
+
+            .time-box {
+                padding:
+                    12px
+                    5px;
+            }
+
+            .time-number {
+                font-size: 22px;
+            }
+
+            .cake {
+                font-size: 75px;
+            }
+
+            .letter {
+                font-size: 15px;
+            }
+        }
+
+
+        /* =========================================================
+           REDUCED MOTION
+        ========================================================= */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: .01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: .01ms !important;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+    <!-- =========================================================
+         BACKGROUND
+    ========================================================= -->
+
+    <div id="background">
+
+        <div class="glow one"></div>
+        <div class="glow two"></div>
+        <div class="glow three"></div>
+
+        <div class="stars" id="stars"></div>
+
+    </div>
+
+
+    <!-- =========================================================
+         APP
+    ========================================================= -->
+
+    <main id="app">
+
+
+        <!-- =====================================================
+             SCREEN 1 — LOGIN
+        ===================================================== -->
+
+        <section
+            class="screen active"
+            id="loginScreen">
+
+            <div class="card">
+
+                <div class="lock-icon">
+                    🔐
+                </div>
+
+                <span class="small-label">
+                    حاجة صغيرة معمولة مخصوص
+                </span>
+
+                <h1 class="title">
+                    قبل ما تدخلي...
+                </h1>
+
+                <p
+                    class="subtitle typing"
+                    id="loginText">
+                </p>
+
+                <div class="password-box">
+
+                    <input
+                        type="password"
+                        id="passwordInput"
+                        placeholder="اكتبي كلمة السر ❤️"
+                        autocomplete="off">
+
+                    <div
+                        class="error-message"
+                        id="passwordError">
+                    </div>
+
+                    <button
+                        class="main-btn"
+                        id="loginButton">
+                        ادخلي ❤️
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             SCREEN 2 — COUNTDOWN
+        ===================================================== -->
+
+        <section
+            class="screen"
+            id="countdownScreen">
+
+            <div class="card">
+
+                <span class="small-label">
+                    لسه شوية...
+                </span>
+
+                <div class="big-heart">
+                    ❤️
+                </div>
+
+                <h1 class="title">
+                    مستنية اليوم ده من بدري
+                </h1>
+
+                <p
+                    class="subtitle typing"
+                    id="countdownText">
+                </p>
+
+                <div class="countdown">
+
+                    <div class="time-box">
+                        <span
+                            class="time-number"
+                            id="days">
+                            00
+                        </span>
+
+                        <span class="time-label">
+                            يوم
+                        </span>
+                    </div>
+
+                    <div class="time-box">
+                        <span
+                            class="time-number"
+                            id="hours">
+                            00
+                        </span>
+
+                        <span class="time-label">
+                            ساعة
+                        </span>
+                    </div>
+
+                    <div class="time-box">
+                        <span
+                            class="time-number"
+                            id="minutes">
+                            00
+                        </span>
+
+                        <span class="time-label">
+                            دقيقة
+                        </span>
+                    </div>
+
+                    <div class="time-box">
+                        <span
+                            class="time-number"
+                            id="seconds">
+                            00
+                        </span>
+
+                        <span class="time-label">
+                            ثانية
+                        </span>
+                    </div>
+
+                </div>
+
+                <p
+                    style="
+                    margin-top:20px;
+                    color:rgba(255,255,255,.45);
+                    font-size:12px;
+                    ">
+                    هتفتحي لما اليوم يوصل ❤️
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             SCREEN 3 — INTRO
+        ===================================================== -->
+
+        <section
+            class="screen"
+            id="introScreen">
+
+            <div class="card">
+
+                <div class="big-heart">
+                    ❤️
+                </div>
+
+                <span class="small-label">
+                    البداية
+                </span>
+
+                <h1 class="title">
+                    أخيرًا اليوم جه...
+                </h1>
+
+                <p
+                    class="subtitle typing"
+                    id="introText">
+                </p>
+
+                <button
+                    class="main-btn next-btn"
+                    data-next="storyScreen">
+                    كملي معايا ❤️
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             SCREEN 4 — STORY
+        ===================================================== -->
+
+        <section
+            class="screen"
+            id="storyScreen">
+
+            <div class="card">
+
+                <span class="small-label">
+                    حكاية صغيرة
+                </span>
+
+                <h1 class="title">
+                    عارفة إيه أكتر حاجة بحبها؟
+                </h1>
+
+                <p
+                    class="subtitle typing"
+                    id="storyText">
+                </p>
+
+                <div class="quote">
+                    <strong>
+                        مش لازم يكون في سبب كبير للحب...
+                    </strong>
+                    <br>
+                    ساعات شخص واحد بس يدخل حياتك،
+                    يخلي الأيام العادية ليها معنى تاني.
+                </div>
+
+                <button
+                    class="main-btn next-btn"
+                    data-next="careScreen">
+                    في حاجة تانية ❤️
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             SCREEN 5 — CARE
+        ===================================================== -->
+
+        <section
+            class="screen"
+            id="careScreen">
+
+            <div class="card">
+
+                <span class="small-label">
+                    يمكن ملاحظتيش...
+                </span>
+
+                <h1 class="title">
+                    بس وجودك بيفرق
+                </h1>
+
+                <p
+                    class="subtitle typing"
+                    id="careText">
+                </p>
+
+                <div class="quote">
+
+                    في ناس وجودها عادي...
+
+                    <br>
+
+                    وفي ناس مجرد ما تظهر،
+                    اليوم كله بيتغير.
+
+                    <br><br>
+
+                    وإنتي من النوع التاني.
+                    ❤️
+
+                </div>
+
+                <button
+                    class="main-btn next-btn"
+                    data-next="questionScreen">
+                    طيب جاوبي بقى 😌
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             SCREEN 6 — QUESTION
+        ===================================================== -->
+
+        <section
+            class="screen"
+            id="questionScreen">
+
+            <div class="card">
+
+                <span class="small-label">
+                    سؤال مهم جدًا 😌
+                </span>
+
+                <h1 class="title">
+                    لو قدامنا يوم كامل مع بعض...
+                </h1>
+
+                <p
+                    class="subtitle">
+                    تختاري نعمل إيه؟
+                </p>
+
+                <div class="question-options">
+
+                    <button
+                        class="option-btn"
+                        data-answer="coffee">
+                        ☕ نقعد نتكلم بالساعات
+                    </button>
+
+                    <button
+                        class="option-btn"
+                        data-answer="walk">
+                        🌙 نتمشى ونرغي في أي حاجة
+                    </button>
+
+                    <button
+                        class="option-btn"
+                        data-answer="movie">
+                        🎬 نتفرج على فيلم ونقضي اليوم سوا
+                    </button>
+
+                    <button
+                        class="option-btn"
+                        data-answer="anything">
+                        ❤️ أي حاجة... المهم مع بعض
+                    </button>
+
+                </div>
+
+                <div
+                    class="answer-result typing"
+                    id="answerResult">
+                </div>
+
+                <button
+                    class="main-btn next-btn"
+                    id="questionNext"
+                    data-next="holdScreen"
+                    disabled>
+                    كملي ❤️
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             SCREEN 7 — HOLD HEART
+        ===================================================== -->
+
+        <section
+            class="screen"
+            id="holdScreen">
+
+            <div class="card">
+
+                <span class="small-label">
+                    عندي طلب صغير
+                </span>
+
+                <h1 class="title">
+                    دوسي على القلب
+                </h1>
+
+                <p
+                    class="subtitle">
+                    وخلي إيدك عليه شوية...
+                </p>
+
+                <div class="hold-area">
+
+                    <div
+                        class="hold-heart"
+                        id="holdHeart">
+                        ❤️
+                    </div>
+
+                    <div class="hold-progress">
+
+                        <div
+                            class="hold-progress-fill"
+                            id="holdProgress">
+                        </div>
+
+                    </div>
+
+                    <p
+                        id="holdText"
+                        style="
+                        margin-top:15px;
+                        color:rgba(255,255,255,.55);
+                        font-size:13px;
+                        ">
+                        لسه...
+                    </p>
+
+                </div>
+
+                <button
+                    class="main-btn next-btn"
+                    id="holdNext"
+                    data-next="loveMeterScreen"
+                    disabled>
+                    عرفتي السر؟ ❤️
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             SCREEN 8 — LOVE METER
+        ===================================================== -->
+
+        <section
+            class="screen"
+            id="loveMeterScreen">
+
+            <div class="card">
+
+                <span class="small-label">
+                    مقياس الحب
+                </span>
+
+                <h1 class="title">
+                    طيب أنا بحبك قد إيه؟
+                </h1>
+
+                <p
+                    class="subtitle typing"
+                    id="meterText">
+                </p>
+
+                <div class="meter">
+
+                    <div
+                        class="meter-fill"
+                        id="meterFill">
+                    </div>
+
+                </div>
+
+                <div
+                    id="meterNumber"
+                    style="
+                    font-size:14px;
+                    color:#ff91b5;
+                    ">
+                    0%
+                </div>
+
+                <div
+                    class="infinity"
+                    id="infinity">
+                    ∞
+                </div>
+
+                <button
+                    class="main-btn next-btn"
+                    id="meterNext"
+                    data-next="memoriesScreen">
+                    اكتشفي الحقيقة ❤️
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             SCREEN 9 — MEMORIES
+        ===================================================== -->
+
+        <section
+            class="screen"
+            id="memoriesScreen">
+
+            <div class="card">
+
+                <span class="small-label">
+                    حاجات صغيرة...
+                </span>
+
+                <h1 class="title">
+                    بس غالية عندي
+                </h1>
+
+                <p
+                    class="subtitle typing"
+                    id="memoriesText">
+                </p>
+
+                <div class="memory-grid">
+
+                    <div class="memory">
+
+                        <div class="memory-icon">
+                            😊
+                        </div>
+
+                        <p>
+                            ضحكتك اللي بتغير مود اليوم كله.
+                        </p>
+
+                    </div>
+
+                    <div class="memory">
+
+                        <div class="memory-icon">
+                            💬
+                        </div>
+
+                        <p>
+                            الكلام اللي ممكن يطول بالساعات
+                            ومش بنحس بالوقت.
+                        </p>
+
+                    </div>
+
+                    <div class="memory">
+
+                        <div class="memory-icon">
+                            🫶
+                        </div>
+
+                        <p>
+                            الإحساس إني أقدر أكون على طبيعتي معاكي.
+                        </p>
+
+                    </div>
+
+                    <div class="memory">
+
+                        <div class="memory-icon">
+                            🌙
+                        </div>
+
+                        <p>
+                            كل اللحظات البسيطة اللي بقت ليها قيمة.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <button
+                    class="main-btn next-btn"
+                    data-next="birthdayScreen">
+                    وصلنا للمفاجأة 🎁
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             SCREEN 10 — BIRTHDAY
+        ===================================================== -->
+
+        <section
+            class="screen"
+            id="birthdayScreen">
+
+            <div
+                id="confettiContainer">
+            </div>
+
+            <div class="birthday-content">
+
+                <div class="cake">
+                    🎂
+                </div>
+
+                <span class="small-label">
+                    النهارده مش يوم عادي
+                </span>
+
+                <h1 class="birthday-title">
+                    كل سنة وإنتي طيبة ❤️
+                </h1>
+
+                <p
+                    class="subtitle typing"
+                    id="birthdayText">
+                </p>
+
+                <button
+                    class="main-btn next-btn"
+                    data-next="letterScreen">
+                    افتحي آخر حاجة 🎁
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             SCREEN 11 — LETTER
+        ===================================================== -->
+
+        <section
+            class="screen"
+            id="letterScreen">
+
+            <div class="card">
+
+                <span class="small-label">
+                    من قلبي ليكي
+                </span>
+
+                <h1 class="title">
+                    في كلام لازم أقوله
+                </h1>
+
+                <div
+                    class="letter typing"
+                    id="letterText">
+                </div>
+
+                <button
+                    class="main-btn next-btn"
+                    data-next="finalScreen">
+                    آخر حاجة... ❤️
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             SCREEN 12 — FINAL
+        ===================================================== -->
+
+        <section
+            class="screen"
+            id="finalScreen">
+
+            <div class="card">
+
+                <div class="final-heart">
+                    ❤️
+                </div>
+
+                <span class="small-label">
+                    وآخر كلمة...
+                </span>
+
+                <h1 class="title">
+                    بحبك
+                </h1>
+
+                <p
+                    class="final-message typing"
+                    id="finalText">
+                </p>
+
+                <div
+                    style="
+                    margin-top:25px;
+                    color:#ff8fb3;
+                    font-size:14px;
+                    ">
+                    ربنا يخليكي ليا ❤️
+                </div>
+
+        
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- =========================================================
+         MUSIC
+    ========================================================= -->
+
+    <audio
+        id="loveMusic"
+        loop
+        preload="auto">
+
+        <source
+            src="music.mp3"
+            type="audio/mpeg">
+
+    </audio>
+
+
+    <audio
+        id="birthdayMusic"
+      
+        preload="auto">
+
+        <source
+            src="122.mp3"
+            type="audio/mpeg">
+
+    </audio>
+
+
+    <audio
+        id="afterBirthdayMusic"
+        
+        preload="auto">
+
+        <source
+            src="after122.mp3"
+            type="audio/mpeg">
+
+    </audio>
+
+
+    <!-- =========================================================
+         UI
+    ========================================================= -->
+
+    <button
+        id="musicButton"
+        aria-label="تشغيل أو إيقاف الموسيقى">
+        🔇
+    </button>
+
+    <div id="musicNotice">
+        اضغطي هنا لتشغيل الموسيقى 🎵
+    </div>
+
+    <div id="progress"></div>
+
+    <button
+        id="backButton"
+        aria-label="رجوع">
+        ↩
+    </button>
+
+
+    <!-- =========================================================
+         JAVASCRIPT
+    ========================================================= -->
+
+    <script>
+
+        "use strict";
+
+
+        /* =========================================================
+           CONFIGURATION
+        ========================================================= */
+
+        const CONFIG = {
+
+            birthdayDate: "2026-09-16",
+
+            password: "loly",
+
+            typingSpeed: 38,
+
+            fastTypingSpeed: 25,
+
+            holdDuration: 1800,
+
+            enableBirthdayLock: true
+
+        };
+
+
+        /* =========================================================
+           STATE
+        ========================================================= */
+
+        const state = {
+
+            currentScreen: "loginScreen",
+
+            previousScreen: null,
+
+            isTyping: false,
+
+            typingToken: 0,
+
+            musicPlaying: false,
+
+            birthdayMode: false,
+
+            holdStart: null,
+
+            holdTimer: null,
+
+            countdownTimer: null
+
+        };
+
+
+        /* =========================================================
+           DOM HELPERS
+        ========================================================= */
+
+        function getElement(id) {
+
+            const element =
+                document.getElementById(id);
+
+            if (!element) {
+
+                console.warn(
+                    `Element not found: ${id}`
+                );
+
+            }
+
+            return element;
+        }
+
+
+        function queryAll(selector) {
+
+            return Array.from(
+                document.querySelectorAll(selector)
+            );
+
+        }
+
+
+        /* =========================================================
+           TYPEWRITER ENGINE
+        ========================================================= */
+
+        function typeText(
+            element,
+            text,
+            speed = CONFIG.typingSpeed
+        ) {
+
+            return new Promise(resolve => {
+
+                if (!element) {
+
+                    resolve();
+
+                    return;
+                }
+
+                state.typingToken++;
+
+                const currentToken =
+                    state.typingToken;
+
+                state.isTyping = true;
+
+                element.textContent = "";
+
+                const characters =
+                    Array.from(text);
+
+                let index = 0;
+
+
+                function typeNext() {
+
+                    if (
+                        currentToken !==
+                        state.typingToken
+                    ) {
+
+                        state.isTyping = false;
+
+                        resolve();
+
+                        return;
+                    }
+
+
+                    if (
+                        index >=
+                        characters.length
+                    ) {
+
+                        state.isTyping = false;
+
+                        resolve();
+
+                        return;
+                    }
+
+
+                    element.textContent +=
+                        characters[index];
+
+                    index++;
+
+                    setTimeout(
+                        typeNext,
+                        speed
+                    );
+
+                }
+
+
+                typeNext();
+
+            });
+
+        }
+
+
+        /* =========================================================
+           TEXT CONTENT
+        ========================================================= */
+
+        const SCREEN_TEXT = {
+
+            login:
+                "المكان ده معمول مخصوص عشانك...\nبس قبل ما تدخلي لازم أتأكد إن اللي قدامي هي إنتي ❤️محدش غيرك يقدر يفتحه ",
+
+            countdown:
+                "أنا ممكن أقولك كل حاجة دلوقتي...\nبس لأ، الحلو لازم نستناه شوية.\nكل ثانية بتعدي بتقربنا من اليوم اللي مستنيه ❤️",
+
+            intro:
+                "يمكن الموقع ده مجرد شوية كود وشوية ألوان وموسيقى...\nبس ورا كل تفصيلة فيه حاجة أهم بكتير.\nفي حد قعد يعمل كل ده وهو بيفكر فيكي.",
+
+            story:
+                "أكتر حاجة بحبها مش موقف معين ولا كلمة معينة...\nأنا بحب إحساسي وأنا معاكي.\nبحب إن وجودك بيخليني أضحك من غير سبب، وأحس إن في حد فعلًا يهمه أمري.",
+
+            care:
+                "يمكن ساعات مبعرفش أقول كل اللي جوايا صح...\nوساعات ممكن أبقى ساكت أو مش عارف أعبر.\nبس ده عمره ما معناه إنك مش فارقة.\nبالعكس... إنتي فارقة أكتر مما تتخيلي.",
+
+            meter:
+                "لو الحب بيتقاس بالأرقام...\nكنت هحتاج رقم ملوش نهاية.\nعشان ببساطة، كل ما أقول وصلت للآخر، بلاقي نفسي بحبك أكتر.",
+
+            memories:
+                "أنا مش محتاج ذكريات ضخمة عشان أفتكرِك.\nتفصيلة صغيرة منك ممكن تخليني أبتسم لوحدي.\nوده يمكن أجمل شيء في الحكاية كلها.",
+
+            birthday:
+              
+                "كل سنة وإنتي حبيبتي وبنتي وروحي وكل حاجة حلوة في حياتي ❤️🎂\n\nكل سنة وإنتي أقرب حد لقلبي وأجمل حاجة حصلتلي، وكل سنة وأنا محظوظ إن ربنا جمعني بيكي 🥹❤️\n\nأنا مش عايز أقولك بس كل سنة وإنتي طيبة أنا عايز أقولك كل سنة وإنتي معايا وكل سنة وأنا بشوف ضحكتك قدامي وكل سنة وإنتي السبب في حاجات كتير حلوة جوايا ❤️يا بنوتي وحبيبتي وروحى أتمنى السنة الجديدة من عمرك تكون أحلى من كل اللي فات وتحققي فيها كل حاجة نفسك فيها، وأفضل دايمًا الشخص اللي يقدر يفرحك ويطمنك ويكون جنبك في كل وقت ❤️🎂🥹\n\nHappy Birthday to my favorite person ❤️♾️",
+
+            letter:
+                "أنا بحبك أكتر من أي كلام ممكن يوصفه… ❤️\nبحب وجودك في حياتي، بحب صوتك وكلامك وضحكتك واهتمامك، وبحب حتى التفاصيل الصغيرة اللي يمكن إنتي نفسك مش واخدة بالك منها… لأنها ببساطة تفاصيلك إنتي.\n\nإنتي بالنسبالي مش مجرد شخص بحبه، إنتي الشخص اللي وجوده بيغيّر شكل يومي، واللي مجرد كلمة منه ممكن تفرحني، واللي بقيت أتمنى أشوفه بخير حتى قبل ما أفكر في نفسي.\n\nومش عايز حبنا يفضل مجرد كلام حلو بنقوله لبعض… أنا عايزه يبقى أمان وقت الخوف، وسند وقت التعب، واهتمام في أصغر التفاصيل، وضحك من قلبنا، وذكريات نفضل نفتكرها مهما عدّى وقت.\n\nنفسي كل سنة تعدي علينا تكون بداية لسنة أجمل، ونفضل نكبر سوا ونحقق أحلامنا سوا، وأفضل أشوفك مبسوطة وأحاول بكل اللي أقدر عليه أكون سبب في ابتسامتك ❤️\n\nولو سألتيني إيه أكتر حاجة بتمناها في عيد ميلادك؟\nهقولك من غير تفكير… إن ربنا يفضل حافظك ليا، ويفضل قلبي مطمن عليكي، ونفضل إحنا الاتنين في حياة بعض مهما الدنيا اتغيرت.\n\nكل سنة وإنتي حبيبتي وبنتي وروحي… وكل سنة وإنتي أقرب إنسانة لقلبي ❤️♾️",
+
+            final:
+                "أنا بحبك… ومش عارف أوصفلك قد إيه وجودك في حياتي فرق معايا ❤️\n\nإنتي مش مجرد حبيبتي… إنتي بنتي وروحي، الشخص اللي بقيت أفرح لفرحته وأزعل لزعله، واللي مجرد وجوده في يومي بيخلّي الدنيا أهدى وأحلى.\n\nبحب كل تفصيلة فيكي، ضحكتك، كلامك، طريقتك، وحتى الحاجات الصغيرة اللي يمكن إنتي متاخديش بالك منها… أنا باخد بالي منها كلها، لأنها منك ❤️\n\nنفسي أفضل الشخص اللي تلاقيه جنبك من غير ما تطلبي، اللي تطمني معاه من غير ما تتكلمي، واللي مهما الدنيا اتغيرت حواليكي تفضلي عارفة إن ليكي حد قلبه دايمًا معاكي.\n\nومهما حاولت أكتب وأقول، هيفضل جوايا كلام أكبر من أي رسالة… بس لو في حاجة واحدة عايزك تفتكريها طول عمرك، فهي إني بحبك بجد، وبتمناكي دايمًا بخير، وضحكتك عمرها ما تغيب.\n\nربنا يخليكي ليا يا كتكوتي، ويحفظك من كل حاجة وحشة، ويفرح قلبك بكل حاجة نفسك فيها، ويكتب لنا أيام كتير نعيشها سوا ونفتكرها ونضحك عليها لما نكبر ❤️🥹\n\nولو الزمن اداني فرصة أختار تاني… هختارك إنتي، من الأول، ومن غير تردد.\n\nبحبك يا حبيبتي وبنتي وروحي… وكل سنة وإنتي أجمل حاجة في حياتي ❤️♾️"
+
+        };
+
+
+        /* =========================================================
+           SCREEN MANAGEMENT
+        ========================================================= */
+
+        const screenOrder = [
+
+            "introScreen",
+            "storyScreen",
+            "careScreen",
+            "questionScreen",
+            "holdScreen",
+            "loveMeterScreen",
+            "memoriesScreen",
+            "birthdayScreen",
+            "letterScreen",
+            "finalScreen"
+
+        ];
+
+
+        function showScreen(
+            screenId,
+            options = {}
+        ) {
+
+            try {
+
+                const target =
+                    getElement(screenId);
+
+                if (!target) return;
+
+
+                const current =
+                    getElement(
+                        state.currentScreen
+                    );
+
+
+                if (
+                    current &&
+                    current !== target
+                ) {
+
+                    current.classList.remove(
+                        "active"
+                    );
+
+                }
+
+
+                state.previousScreen =
+                    state.currentScreen;
+
+                state.currentScreen =
+                    screenId;
+
+
+                target.classList.add(
+                    "active"
+                );
+
+
+                updateProgress();
+
+                updateBackButton();
+
+                prepareScreen(screenId);
+
+
+                if (!options.skipScroll) {
+
+                    const card =
+                        target.querySelector(
+                            ".card"
+                        );
+
+                    if (card) {
+
+                        card.scrollTop = 0;
+
+                    }
+
+                }
+
+            } catch (error) {
+
+                handleError(
+                    error,
+                    "showScreen"
+                );
+
+            }
+
+        }
+
+
+        function prepareScreen(screenId) {
+
+            switch (screenId) {
+
+                case "loginScreen":
+
+                    typeText(
+                        getElement("loginText"),
+                        SCREEN_TEXT.login
+                    );
+
+                    break;
+
+
+                case "countdownScreen":
+
+                    typeText(
+                        getElement("countdownText"),
+                        SCREEN_TEXT.countdown
+                    );
+
+                    startCountdown();
+
+                    break;
+
+
+                case "introScreen":
+
+                    typeText(
+                        getElement("introText"),
+                        SCREEN_TEXT.intro
+                    );
+
+                    startLoveMusic();
+
+                    break;
+
+
+                case "storyScreen":
+
+                    typeText(
+                        getElement("storyText"),
+                        SCREEN_TEXT.story
+                    );
+
+                    break;
+
+
+                case "careScreen":
+
+                    typeText(
+                        getElement("careText"),
+                        SCREEN_TEXT.care
+                    );
+
+                    break;
+
+
+                case "loveMeterScreen":
+
+                    animateLoveMeter();
+
+                    break;
+
+
+                case "memoriesScreen":
+
+                    typeText(
+                        getElement("memoriesText"),
+                        SCREEN_TEXT.memories
+                    );
+
+                    break;
+
+
+                case "birthdayScreen":
+
+                    enterBirthdayMode();
+
+                    break;
+
+
+                case "letterScreen":
+
+                    typeText(
+                        getElement("letterText"),
+                        SCREEN_TEXT.letter,
+                        30
+                    );
+
+                    break;
+
+
+                case "finalScreen":
+
+                    typeText(
+                        getElement("finalText"),
+                        SCREEN_TEXT.final,
+                        32
+                    );
+
+                    break;
+
+            }
+
+        }
+
+
+        /* =========================================================
+           PROGRESS
+        ========================================================= */
+
+        function createProgress() {
+
+            const progress =
+                getElement("progress");
+
+            if (!progress) return;
+
+            progress.innerHTML = "";
+
+            screenOrder.forEach(
+                (screenId, index) => {
+
+                    const dot =
+                        document.createElement(
+                            "div"
+                        );
+
+                    dot.className =
+                        "progress-dot";
+
+                    dot.dataset.index =
+                        index;
+
+                    progress.appendChild(
+                        dot
+                    );
+
+                }
+            );
+
+        }
+
+
+        function updateProgress() {
+
+            const progress =
+                getElement("progress");
+
+            if (!progress) return;
+
+
+            const index =
+                screenOrder.indexOf(
+                    state.currentScreen
+                );
+
+
+            const visible =
+                index >= 0;
+
+
+            progress.style.display =
+                visible
+                    ? "flex"
+                    : "none";
+
+
+            queryAll(
+                ".progress-dot"
+            ).forEach(
+                (dot, dotIndex) => {
+
+                    dot.classList.toggle(
+                        "active",
+                        dotIndex === index
+                    );
+
+                }
+            );
+
+        }
+
+
+        /* =========================================================
+           BACK BUTTON
+        ========================================================= */
+
+        function updateBackButton() {
+
+            const button =
+                getElement("backButton");
+
+            if (!button) return;
+
+
+            const canGoBack =
+                screenOrder.includes(
+                    state.currentScreen
+                ) &&
+                state.currentScreen !==
+                "introScreen";
+
+
+            button.style.display =
+                canGoBack
+                    ? "block"
+                    : "none";
+
+        }
+
+
+        function goBack() {
+
+            const currentIndex =
+                screenOrder.indexOf(
+                    state.currentScreen
+                );
+
+
+            if (currentIndex <= 0) {
+
+                return;
+
+            }
+
+
+            const previous =
+                screenOrder[
+                    currentIndex - 1
+                ];
+
+
+            showScreen(previous);
+
+        }
+
+
+        /* =========================================================
+           BIRTHDAY DATE
+        ========================================================= */
+
+        function isBirthdayToday() {
+
+            const now =
+                new Date();
+
+            const birthday =
+                new Date(
+                    `${CONFIG.birthdayDate}T00:00:00`
+                );
+
+
+            return (
+                now.getFullYear() ===
+                    birthday.getFullYear() &&
+
+                now.getMonth() ===
+                    birthday.getMonth() &&
+
+                now.getDate() ===
+                    birthday.getDate()
+            );
+
+        }
+
+
+        function isBeforeBirthday() {
+
+            const now =
+                new Date();
+
+            const birthday =
+                new Date(
+                    `${CONFIG.birthdayDate}T00:00:00`
+                );
+
+
+            return now < birthday;
+
+        }
+
+
+        /* =========================================================
+           LOGIN
+        ========================================================= */
+
+        function checkPassword() {
+
+            try {
+
+                const input =
+                    getElement(
+                        "passwordInput"
+                    );
+
+                const error =
+                    getElement(
+                        "passwordError"
+                    );
+
+
+                if (!input || !error) {
+
+                    return;
+
+                }
+
+
+                const value =
+                    input.value.trim();
+
+
+          if (value !== CONFIG.password) {
+
+    const wrongPasswordMessages = [
+        "إيه يا بنتي 😭 ركزي كده وجربي تاني.",
+        "لااا 😂 دي مش كلمة السر خالص.",
+        "قربتي؟ ولا لسه بنخمن؟ 👀❤️",
+        "واضح إنك نسيتي السر اللي بينا 😌",
+        "طب فكري شوية كده 😂❤️",
+        "إنتي داخلة تخمّني ولا إيه؟ 😂",
+        "مش دي يا كتكوتي ❤️ جربي واحدة تانية.",
+        "أنا عارف إنك عارفاها 😏 ركزي بس.",
+        "لسه؟ 😂 الكلمة مستنياكي.",
+        "غلط يا روحي ❤️ بس المحاولة حلوة.",
+        "هو إحنا هنفضل نجرب كده كتير؟ 😂",
+        "آخر محاولة... بهزر 😭❤️ جربي تاني."
+    ];
+
+    const randomMessage =
+        wrongPasswordMessages[
+            Math.floor(
+                Math.random() *
+                wrongPasswordMessages.length
+            )
+        ];
+
+    error.textContent = randomMessage;
+
+    input.value = "";
+    input.focus();
+
+    return;
+          }
+
+
+                error.textContent = "";
+
+
+                if (
+                    CONFIG.enableBirthdayLock &&
+                    !isBirthdayToday()
+                ) {
+
+                    showScreen(
+                        "countdownScreen"
+                    );
+
+                    return;
+
+                }
+
+
+                showScreen(
+                    "introScreen"
+                );
+
+
+            } catch (error) {
+
+                handleError(
+                    error,
+                    "checkPassword"
+                );
+
+            }
+
+        }
+
+
+        /* =========================================================
+           COUNTDOWN
+        ========================================================= */
+
+        function startCountdown() {
+
+            if (
+                state.countdownTimer
+            ) {
+
+                clearInterval(
+                    state.countdownTimer
+                );
+
+            }
+
+
+            updateCountdown();
+
+
+            state.countdownTimer =
+                setInterval(
+                    updateCountdown,
+                    1000
+                );
+
+        }
+
+
+        function updateCountdown() {
+
+            const nowDate = new Date();
+            const birthdayBase = new Date(`${CONFIG.birthdayDate}T00:00:00`);
+
+            let targetDate = new Date(
+                nowDate.getFullYear(),
+                birthdayBase.getMonth(),
+                birthdayBase.getDate(),
+                0, 0, 0, 0
+            );
+
+            // بعد انتهاء يوم الميلاد، يبدأ العداد تلقائيًا للعام القادم.
+            if (nowDate.getTime() > targetDate.getTime() && !isBirthdayToday()) {
+                targetDate = new Date(
+                    nowDate.getFullYear() + 1,
+                    birthdayBase.getMonth(),
+                    birthdayBase.getDate(),
+                    0, 0, 0, 0
+                );
+            }
+
+            const target = targetDate.getTime();
+            const now = nowDate.getTime();
+            const difference = target - now;
+
+            if (difference <= 0) {
+                clearInterval(state.countdownTimer);
+                if (isBirthdayToday()) {
+                    showScreen("introScreen");
+                }
+                return;
+            }
+
+
+            const days =
+                Math.floor(
+                    difference /
+                    (1000 * 60 * 60 * 24)
+                );
+
+
+            const hours =
+                Math.floor(
+                    (
+                        difference %
+                        (1000 * 60 * 60 * 24)
+                    ) /
+                    (1000 * 60 * 60)
+                );
+
+
+            const minutes =
+                Math.floor(
+                    (
+                        difference %
+                        (1000 * 60 * 60)
+                    ) /
+                    (1000 * 60)
+                );
+
+
+            const seconds =
+                Math.floor(
+                    (
+                        difference %
+                        (1000 * 60)
+                    ) /
+                    1000
+                );
+
+
+            setText(
+                "days",
+                formatNumber(days)
+            );
+
+            setText(
+                "hours",
+                formatNumber(hours)
+            );
+
+            setText(
+                "minutes",
+                formatNumber(minutes)
+            );
+
+            setText(
+                "seconds",
+                formatNumber(seconds)
+            );
+
+        }
+
+
+        function formatNumber(number) {
+
+            return String(number)
+                .padStart(2, "0");
+
+        }
+
+
+        /* =========================================================
+           NEXT BUTTONS
+        ========================================================= */
+
+        function setupNextButtons() {
+
+            queryAll(
+                ".next-btn"
+            ).forEach(button => {
+
+                button.addEventListener(
+                    "click",
+                    () => {
+
+                        const next =
+                            button.dataset.next;
+
+                        // زر الانتقال من عيد الميلاد للرسالة:
+                        // نوقف 122.mp3 ونشغل after122.mp3 فورًا من نفس ضغطة المستخدم.
+                        if (
+                            button.closest("#birthdayScreen") &&
+                            next === "letterScreen"
+                        ) {
+                            playAfterBirthdayMusic();
+                        }
+
+                        if (next) {
+                            showScreen(next);
+                        }
+
+                    }
+                );
+
+            });
+
+        }
+
+
+        /* =========================================================
+           QUESTIONS
+        ========================================================= */
+
+        function setupQuestions() {
+
+            const result =
+                getElement(
+                    "answerResult"
+                );
+
+            const nextButton =
+                getElement(
+                    "questionNext"
+                );
+
+
+            queryAll(
+                ".option-btn"
+            ).forEach(button => {
+
+                button.addEventListener(
+                    "click",
+                    async () => {
+
+                        const answer =
+                            button.dataset.answer;
+
+
+                        const responses = {
+
+                            coffee:
+                                "وده اختيار خطر جدًا... لأننا ممكن نقعد نتكلم وننسى إن في حاجة اسمها وقت 😂❤️",
+
+                            walk:
+                                "اختيار جميل... خصوصًا لو المشوار ملوش نهاية والكلام أهم من المكان ❤️",
+
+                            movie:
+                                "موافق... بس عندي إحساس إننا هنقعد نتكلم أكتر ما هنتفرج 😂",
+
+                            anything:
+                                "أهو ده الكلام اللي بحبه... المكان مش مهم، المهم إننا سوا ❤️"
+
+                        };
+
+
+                        await typeText(
+                            result,
+                            responses[
+                                answer
+                            ],
+                            30
+                        );
+
+
+                        nextButton.disabled =
+                            false;
+
+                    }
+                );
+
+            });
+
+        }
+
+
+        /* =========================================================
+           HOLD HEART
+        ========================================================= */
+
+        function setupHoldHeart() {
+
+            const heart =
+                getElement(
+                    "holdHeart"
+                );
+
+            const progress =
+                getElement(
+                    "holdProgress"
+                );
+
+            const text =
+                getElement(
+                    "holdText"
+                );
+
+            const next =
+                getElement(
+                    "holdNext"
+                );
+
+
+            if (
+                !heart ||
+                !progress ||
+                !text ||
+                !next
+            ) {
+
+                return;
+
+            }
+
+
+            function startHolding(event) {
+
+                event.preventDefault();
+
+                state.holdStart =
+                    Date.now();
+
+                heart.classList.add(
+                    "holding"
+                );
+
+
+                state.holdTimer =
+                    setInterval(
+                        () => {
+
+                            const elapsed =
+                                Date.now() -
+                                state.holdStart;
+
+
+                            const percentage =
+                                Math.min(
+                                    100,
+                                    (
+                                        elapsed /
+                                        CONFIG.holdDuration
+                                    ) * 100
+                                );
+
+
+                            progress.style.width =
+                                `${percentage}%`;
+
+
+                            if (
+                                percentage >=
+                                100
+                            ) {
+
+                                finishHolding();
+
+                            }
+
+                        },
+                        30
+                    );
+
+            }
+
+
+            function stopHolding() {
+
+                if (
+                    state.holdTimer
+                ) {
+
+                    clearInterval(
+                        state.holdTimer
+                    );
+
+                }
+
+                state.holdTimer = null;
+
+                state.holdStart = null;
+
+                heart.classList.remove(
+                    "holding"
+                );
+
+            }
+
+
+            function finishHolding() {
+
+                if (
+                    state.holdTimer
+                ) {
+
+                    clearInterval(
+                        state.holdTimer
+                    );
+
+                }
+
+
+                progress.style.width =
+                    "100%";
+
+
+                text.textContent =
+                    "لقيتيه... السر إنك غالية عندي جدًا ❤️";
+
+
+                next.disabled =
+                    false;
+
+
+                heart.classList.remove(
+                    "holding"
+                );
+
+
+                createMiniHearts();
+
+            }
+
+
+            heart.addEventListener(
+                "pointerdown",
+                startHolding
+            );
+
+
+            heart.addEventListener(
+                "pointerup",
+                () => {
+
+                    if (
+                        progress.style.width !==
+                        "100%"
+                    ) {
+
+                        stopHolding();
+
+                    }
+
+                }
+            );
+
+
+            heart.addEventListener(
+                "pointercancel",
+                stopHolding
+            );
+
+
+            heart.addEventListener(
+                "pointerleave",
+                event => {
+
+                    if (
+                        event.buttons === 0
+                    ) {
+
+                        stopHolding();
+
+                    }
+
+                }
+            );
+
+        }
+
+
+        /* =========================================================
+           LOVE METER
+        ========================================================= */
+
+        function animateLoveMeter() {
+
+            const fill =
+                getElement(
+                    "meterFill"
+                );
+
+            const number =
+                getElement(
+                    "meterNumber"
+                );
+
+            const infinity =
+                getElement(
+                    "infinity"
+                );
+
+
+            if (
+                !fill ||
+                !number ||
+                !infinity
+            ) {
+
+                return;
+
+            }
+
+
+            fill.style.width =
+                "0%";
+
+
+            number.textContent =
+                "0%";
+
+
+            infinity.classList.remove(
+                "show"
+            );
+
+
+            setTimeout(
+                () => {
+
+                    fill.style.width =
+                        "100%";
+
+
+                    let current =
+                        0;
+
+
+                    const counter =
+                        setInterval(
+                            () => {
+
+                                current += 2;
+
+
+                                if (
+                                    current >=
+                                    100
+                                ) {
+
+                                    current =
+                                        100;
+
+                                    clearInterval(
+                                        counter
+                                    );
+
+
+                                    setTimeout(
+                                        () => {
+
+                                            number.textContent =
+                                                "∞%";
+
+                                            infinity.classList.add(
+                                                "show"
+                                            );
+
+                                        },
+                                        400
+                                    );
+
+                                } else {
+
+                                    number.textContent =
+                                        `${current}%`;
+
+                                }
+
+                            },
+                            30
+                        );
+
+                },
+                300
+            );
+
+
+            typeText(
+                getElement(
+                    "meterText"
+                ),
+                SCREEN_TEXT.meter,
+                35
+            );
+
+        }
+
+
+        /* =========================================================
+           BIRTHDAY MODE
+        ========================================================= */
+
+        function enterBirthdayMode() {
+
+            if (
+                state.birthdayMode
+            ) {
+
+                createConfetti();
+
+                return;
+
+            }
+
+
+            state.birthdayMode =
+                true;
+
+
+            stopLoveMusic();
+
+            startBirthdayMusic();
+
+            createConfetti();
+
+            createMiniHearts();
+
+
+            typeText(
+                getElement(
+                    "birthdayText"
+                ),
+                SCREEN_TEXT.birthday,
+                35
+            );
+
+
+            try {
+
+                if (
+                    navigator.vibrate
+                ) {
+
+                    navigator.vibrate(
+                        [40, 50, 40]
+                    );
+
+                }
+
+            } catch (error) {
+
+                console.warn(
+                    "Vibration unavailable."
+                );
+
+            }
+
+        }
+
+
+        /* =========================================================
+           CONFETTI
+        ========================================================= */
+
+        function createConfetti() {
+
+            const container =
+                getElement(
+                    "confettiContainer"
+                );
+
+
+            if (!container) return;
+
+
+            container.innerHTML = "";
+
+
+            const symbols = [
+                "🎉",
+                "✨",
+                "💖",
+                "💕",
+                "⭐",
+                "🎀",
+                "💗"
+            ];
+
+
+            for (
+                let i = 0;
+                i < 70;
+                i++
+            ) {
+
+                const piece =
+                    document.createElement(
+                        "div"
+                    );
+
+
+                piece.className =
+                    "confetti";
+
+
+                piece.textContent =
+                    symbols[
+                        Math.floor(
+                            Math.random() *
+                            symbols.length
+                        )
+                    ];
+
+
+                piece.style.left =
+                    `${Math.random() * 100}%`;
+
+
+                piece.style.fontSize =
+                    `${10 + Math.random() * 18}px`;
+
+
+                piece.style.animationDelay =
+                    `${Math.random() * 2}s`;
+
+
+                piece.style.animationDuration =
+                    `${2.5 + Math.random() * 2}s`;
+
+
+                container.appendChild(
+                    piece
+                );
+
+            }
+
+        }
+
+
+        /* =========================================================
+           FLOATING HEARTS
+        ========================================================= */
+
+        function createMiniHearts() {
+
+            const background =
+                getElement(
+                    "background"
+                );
+
+
+            if (!background) return;
+
+
+            for (
+                let i = 0;
+                i < 15;
+                i++
+            ) {
+
+                setTimeout(
+                    () => {
+
+                        const heart =
+                            document.createElement(
+                                "div"
+                            );
+
+
+                        heart.className =
+                            "heart";
+
+
+                        heart.textContent =
+                            Math.random() > .3
+                                ? "❤️"
+                                : "💕";
+
+
+                        heart.style.left =
+                            `${Math.random() * 100}%`;
+
+
+                        heart.style.fontSize =
+                            `${12 + Math.random() * 20}px`;
+
+
+                        heart.style.setProperty(
+                            "--move",
+                            `${-100 + Math.random() * 200}px`
+                        );
+
+
+                        heart.style.animationDuration =
+                            `${5 + Math.random() * 6}s`;
+
+
+                        background.appendChild(
+                            heart
+                        );
+
+
+                        setTimeout(
+                            () => {
+
+                                heart.remove();
+
+                            },
+                            12000
+                        );
+
+                    },
+                    i * 200
+                );
+
+            }
+
+        }
+
+
+        /* =========================================================
+           MUSIC
+        ========================================================= */
+
+        function startLoveMusic() {
+
+            if (
+                state.birthdayMode
+            ) {
+
+                return;
+
+            }
+
+
+            const audio =
+                getElement(
+                    "loveMusic"
+                );
+
+
+            if (!audio) return;
+
+
+            audio.volume = .35;
+
+
+            audio.play()
+                .then(
+                    () => {
+
+                        state.musicPlaying =
+                            true;
+
+                        updateMusicButton();
+
+                    }
+                )
+                .catch(
+                    () => {
+
+                        showMusicNotice();
+
+                    }
+                );
+
+        }
+
+
+        function startBirthdayMusic() {
+
+            const birthdayAudio =
+                getElement(
+                    "birthdayMusic"
+                );
+
+            const afterBirthdayAudio =
+                getElement(
+                    "afterBirthdayMusic"
+                );
+
+            if (!birthdayAudio) return;
+
+            if (afterBirthdayAudio) {
+                afterBirthdayAudio.pause();
+                afterBirthdayAudio.currentTime = 0;
+            }
+
+            birthdayAudio.currentTime = 0;
+            birthdayAudio.volume = .45;
+
+            birthdayAudio.play()
+                .then(() => {
+                    state.musicPlaying = true;
+                    updateMusicButton();
+                    hideMusicNotice();
+                })
+                .catch(error => {
+                    console.error("122.mp3 could not play:", error);
+                    showMusicNotice();
+                });
+
+        }
+
+
+        function playAfterBirthdayMusic() {
+
+            const birthdayAudio =
+                getElement(
+                    "birthdayMusic"
+                );
+
+            const afterBirthdayAudio =
+                getElement(
+                    "afterBirthdayMusic"
+                );
+
+            if (birthdayAudio) {
+                birthdayAudio.pause();
+                birthdayAudio.currentTime = 0;
+            }
+
+            if (!afterBirthdayAudio) {
+                console.error("afterBirthdayMusic element is missing");
+                return;
+            }
+
+            afterBirthdayAudio.pause();
+            afterBirthdayAudio.currentTime = 0;
+            afterBirthdayAudio.volume = .45;
+
+            // load() يضمن إعادة تحميل after122.mp3 قبل التشغيل.
+            afterBirthdayAudio.load();
+
+            const playPromise = afterBirthdayAudio.play();
+
+            if (playPromise !== undefined) {
+                playPromise
+                    .then(() => {
+                        state.musicPlaying = true;
+                        updateMusicButton();
+                        hideMusicNotice();
+                    })
+                    .catch(error => {
+                        console.error("after122.mp3 could not play:", error);
+                        showMusicNotice();
+                    });
+            }
+
+        }
+
+
+        function stopLoveMusic() {
+
+            const audio =
+                getElement(
+                    "loveMusic"
+                );
+
+            if (!audio) return;
+
+            audio.pause();
+            audio.currentTime = 0;
+
+        }
+
+
+        function stopBirthdayMusic() {
+
+            const birthdayAudio =
+                getElement(
+                    "birthdayMusic"
+                );
+
+            const afterBirthdayAudio =
+                getElement(
+                    "afterBirthdayMusic"
+                );
+
+            if (birthdayAudio) {
+                birthdayAudio.pause();
+                birthdayAudio.currentTime = 0;
+            }
+
+            if (afterBirthdayAudio) {
+                afterBirthdayAudio.pause();
+                afterBirthdayAudio.currentTime = 0;
+            }
+
+        }
+
+
+        function toggleMusic() {
+
+            try {
+
+                const love =
+                    getElement(
+                        "loveMusic"
+                    );
+
+                const birthday =
+                    getElement(
+                        "birthdayMusic"
+                    );
+
+                const afterBirthday =
+                    getElement(
+                        "afterBirthdayMusic"
+                    );
+
+                const activeAudio =
+                    state.birthdayMode
+                        ? (afterBirthday && !afterBirthday.paused
+                            ? afterBirthday
+                            : birthday)
+                        : love;
+
+
+                if (!activeAudio) {
+                    return;
+                }
+
+
+                if (
+                    activeAudio.paused
+                ) {
+
+                    activeAudio.play()
+                        .then(
+                            () => {
+
+                                state.musicPlaying =
+                                    true;
+
+                                hideMusicNotice();
+
+                                updateMusicButton();
+
+                            }
+                        )
+                        .catch(
+                            () => {
+
+                                showMusicNotice();
+
+                            }
+                        );
+
+                } else {
+
+                    activeAudio.pause();
+
+                    state.musicPlaying =
+                        false;
+
+                    updateMusicButton();
+
+                }
+
+            } catch (error) {
+
+                handleError(
+                    error,
+                    "toggleMusic"
+                );
+
+            }
+
+        }
+
+
+        function updateMusicButton() {
+
+            const button =
+                getElement(
+                    "musicButton"
+                );
+
+
+            if (!button) return;
+
+
+            button.textContent =
+                state.musicPlaying
+                    ? "🎵"
+                    : "🔇";
+
+        }
+
+
+        function showMusicNotice() {
+
+            const notice =
+                getElement(
+                    "musicNotice"
+                );
+
+
+            if (!notice) return;
+
+
+            notice.classList.add(
+                "show"
+            );
+
+
+            setTimeout(
+                hideMusicNotice,
+                5000
+            );
+
+        }
+
+
+        function hideMusicNotice() {
+
+            const notice =
+                getElement(
+                    "musicNotice"
+                );
+
+
+            if (!notice) return;
+
+
+            notice.classList.remove(
+                "show"
+            );
+
+        }
+
+
+        /* =========================================================
+           STARS
+        ========================================================= */
+
+        function createStars() {
+
+            const container =
+                getElement(
+                    "stars"
+                );
+
+
+            if (!container) return;
+
+
+            for (
+                let i = 0;
+                i < 90;
+                i++
+            ) {
+
+                const star =
+                    document.createElement(
+                        "div"
+                    );
+
+
+                star.className =
+                    "star";
+
+
+                star.style.left =
+                    `${Math.random() * 100}%`;
+
+
+                star.style.top =
+                    `${Math.random() * 100}%`;
+
+
+                star.style.animationDelay =
+                    `${Math.random() * 3}s`;
+
+
+                star.style.animationDuration =
+                    `${1.5 + Math.random() * 3}s`;
+
+
+                container.appendChild(
+                    star
+                );
+
+            }
+
+        }
+
+
+        /* =========================================================
+           RESTART
+        ========================================================= */
+
+        function restartExperience() {
+
+            state.birthdayMode =
+                false;
+
+            state.musicPlaying =
+                false;
+
+            state.currentScreen =
+                "loginScreen";
+
+
+            stopBirthdayMusic();
+
+            const love =
+                getElement(
+                    "loveMusic"
+                );
+
+
+            if (love) {
+
+                love.currentTime =
+                    0;
+
+            }
+
+
+            const birthday =
+                getElement(
+                    "birthdayMusic"
+                );
+
+
+            if (birthday) {
+
+                birthday.currentTime =
+                    0;
+
+            }
+
+            const afterBirthday =
+                getElement(
+                    "afterBirthdayMusic"
+                );
+
+            if (afterBirthday) {
+                afterBirthday.pause();
+                afterBirthday.currentTime = 0;
+            }
+
+
+            queryAll(
+                ".screen"
+            ).forEach(
+                screen => {
+
+                    screen.classList.remove(
+                        "active"
+                    );
+
+                }
+            );
+
+
+            getElement(
+                "loginScreen"
+            ).classList.add(
+                "active"
+            );
+
+
+            const input =
+                getElement(
+                    "passwordInput"
+                );
+
+
+            if (input) {
+
+                input.value = "";
+
+            }
+
+
+            const error =
+                getElement(
+                    "passwordError"
+                );
+
+
+            if (error) {
+
+                error.textContent =
+                    "";
+
+            }
+
+
+            const meter =
+                getElement(
+                    "meterFill"
+                );
+
+
+            if (meter) {
+
+                meter.style.width =
+                    "0%";
+
+            }
+
+
+            const meterNumber =
+                getElement(
+                    "meterNumber"
+                );
+
+
+            if (meterNumber) {
+
+                meterNumber.textContent =
+                    "0%";
+
+            }
+
+
+            updateProgress();
+
+            updateBackButton();
+
+            prepareScreen(
+                "loginScreen"
+            );
+
+        }
+
+
+        /* =========================================================
+           UTILITY
+        ========================================================= */
+
+        function setText(
+            id,
+            value
+        ) {
+
+            const element =
+                getElement(id);
+
+
+            if (element) {
+
+                element.textContent =
+                    value;
+
+            }
+
+        }
+
+
+        /* =========================================================
+           EVENT LISTENERS
+        ========================================================= */
+
+        function setupEvents() {
+
+            const loginButton =
+                getElement(
+                    "loginButton"
+                );
+
+
+            const passwordInput =
+                getElement(
+                    "passwordInput"
+                );
+
+
+            if (loginButton) {
+
+                loginButton.addEventListener(
+                    "click",
+                    checkPassword
+                );
+
+            }
+
+
+            if (passwordInput) {
+
+                passwordInput.addEventListener(
+                    "keydown",
+                    event => {
+
+                        if (
+                            event.key ===
+                            "Enter"
+                        ) {
+
+                            checkPassword();
+
+                        }
+
+                    }
+                );
+
+            }
+
+
+            const musicButton =
+                getElement(
+                    "musicButton"
+                );
+
+
+            if (musicButton) {
+
+                musicButton.addEventListener(
+                    "click",
+                    toggleMusic
+                );
+
+            }
+
+
+            const backButton =
+                getElement(
+                    "backButton"
+                );
+
+
+            if (backButton) {
+
+                backButton.addEventListener(
+                    "click",
+                    goBack
+                );
+
+            }
+
+
+            const restart =
+                getElement(
+                    "restartButton"
+                );
+
+
+            if (restart) {
+
+                restart.addEventListener(
+                    "click",
+                    restartExperience
+                );
+
+            }
+
+
+            setupNextButtons();
+
+            setupQuestions();
+
+            setupHoldHeart();
+
+
+            /*
+
+                أول لمسة من المستخدم
+                نحاول تشغيل الموسيقى مرة أخرى.
+
+            */
+
+            document.addEventListener(
+                "pointerdown",
+                () => {
+
+                    if (
+                        !state.musicPlaying
+                    ) {
+
+                        if (
+                            state.birthdayMode
+                        ) {
+
+                            if (state.currentScreen === "letterScreen" || state.currentScreen === "finalScreen") {
+                                const afterBirthday = getElement("afterBirthdayMusic");
+                                if (afterBirthday && afterBirthday.paused) {
+                                    playAfterBirthdayMusic();
+                                }
+                            } else {
+                                startBirthdayMusic();
+                            }
+
+                        } else if (
+                            state.currentScreen !==
+                            "loginScreen" &&
+                            state.currentScreen !==
+                            "countdownScreen"
+                        ) {
+
+                            startLoveMusic();
+
+                        }
+
+                    }
+
+                },
+                {
+                    passive: true,
+                    once: false
+                }
+            );
+
+        }
+
+
+        /* =========================================================
+           ERROR HANDLING
+        ========================================================= */
+
+        function handleError(
+            error,
+            context = "Unknown"
+        ) {
+
+            console.error(
+                `[${context}]`,
+                error
+            );
+
+        }
+
+
+        window.addEventListener(
+            "error",
+            event => {
+
+                console.error(
+                    "Global error:",
+                    event.error ||
+                    event.message
+                );
+
+            }
+        );
+
+
+        window.addEventListener(
+            "unhandledrejection",
+            event => {
+
+                console.error(
+                    "Unhandled promise rejection:",
+                    event.reason
+                );
+
+            }
+        );
+
+
+        /* =========================================================
+           INITIALIZATION
+        ========================================================= */
+
+        function initializeApp() {
+
+            try {
+
+                createStars();
+
+                createProgress();
+
+                setupEvents();
+
+                prepareScreen(
+                    "loginScreen"
+                );
+
+                updateProgress();
+
+                updateBackButton();
+
+
+                /*
+                    لو اليوم عيد الميلاد
+                    نسمح بالدخول بعد كلمة السر.
+
+                    لو قبل اليوم:
+                    كلمة السر هتودّي لصفحة العد التنازلي.
+                */
+
+                console.log(
+                    "Birthday Experience initialized successfully."
+                );
+
+
+            } catch (error) {
+
+                handleError(
+                    error,
+                    "initializeApp"
+                );
+
+            }
+
+        }
+
+
+        /* =========================================================
+           START
+        ========================================================= */
+
+        if (
+            document.readyState ===
+            "loading"
+        ) {
+
+            document.addEventListener(
+                "DOMContentLoaded",
+                initializeApp
+            );
+
+        } else {
+
+            initializeApp();
+
+        }
+
+    </script>
+
+</body>
+</html>
